@@ -26,8 +26,8 @@ export function Step1Welcome(props: Step1WelcomeProps): JSX.Element {
         Welcome to df-syncer-windows
       </h2>
       <p className="wizard-step__copy">
-        df-syncer-windows keeps your Dwarf Fortress saves, mods, and prefs in sync across your PCs by
-        writing to a folder your cloud client (Proton Drive, OneDrive, Dropbox, etc.) is already
+        df-syncer-windows keeps your Dwarf Fortress saves, mods, and prefs in sync across your PCs
+        by writing to a folder your cloud client (Proton Drive, OneDrive, Dropbox, etc.) is already
         mirroring. We never log into your cloud account.
       </p>
       <p className="wizard-step__copy">

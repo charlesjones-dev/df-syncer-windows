@@ -997,7 +997,10 @@ function AboutTab(props: { onToast?: TabProps['onToast'] }): JSX.Element {
             className="settings-link"
             data-testid="settings-link-repo"
             onClick={(): void => {
-              void safeOpenExternal('https://github.com/charlesjones-dev/df-syncer-windows', 'GitHub repo');
+              void safeOpenExternal(
+                'https://github.com/charlesjones-dev/df-syncer-windows',
+                'GitHub repo'
+              );
             }}
           >
             GitHub repository

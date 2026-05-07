@@ -81,8 +81,8 @@ export function Step5MachineIdentity(props: Step5MachineIdentityProps): JSX.Elem
         Name this PC
       </h2>
       <p className="wizard-step__copy">
-        df-syncer-windows tags every sync with a machine identifier so you can tell at a glance which PC
-        last touched the cloud. We pre-filled it from your hostname; you can change it.
+        df-syncer-windows tags every sync with a machine identifier so you can tell at a glance
+        which PC last touched the cloud. We pre-filled it from your hostname; you can change it.
       </p>
 
       <div className="step5__field">

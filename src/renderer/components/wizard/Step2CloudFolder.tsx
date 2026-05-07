@@ -68,8 +68,8 @@ export function Step2CloudFolder(props: Step2CloudFolderProps): JSX.Element {
       </h2>
       <p className="wizard-step__copy">
         Choose the local folder that your cloud client (Proton Drive, OneDrive, Dropbox, Google
-        Drive, iCloud, etc.) already mirrors. df-syncer-windows writes a small <code>df-syncer-windows/</code>{' '}
-        subfolder inside it.
+        Drive, iCloud, etc.) already mirrors. df-syncer-windows writes a small{' '}
+        <code>df-syncer-windows/</code> subfolder inside it.
       </p>
 
       <FolderPicker
@@ -142,7 +142,8 @@ export function Step2CloudFolder(props: Step2CloudFolderProps): JSX.Element {
 
       {snapshot && (
         <p className="wizard-step__note" data-testid="step2-existing-note">
-          We&rsquo;ll detect any existing df-syncer-windows mirror at this folder during the first sync.
+          We&rsquo;ll detect any existing df-syncer-windows mirror at this folder during the first
+          sync.
         </p>
       )}
     </section>

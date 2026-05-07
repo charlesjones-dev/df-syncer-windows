@@ -598,7 +598,12 @@ async function applyItem(
   session: import('./backup').BackupSession
 ): Promise<number> {
   const localAbs = path.join(ctx.gameFolder, ...item.rel.split('/'));
-  const cloudAbs = path.join(ctx.cloudFolder, 'df-syncer-windows', 'mirror', ...item.rel.split('/'));
+  const cloudAbs = path.join(
+    ctx.cloudFolder,
+    'df-syncer-windows',
+    'mirror',
+    ...item.rel.split('/')
+  );
   switch (item.kind) {
     case 'push': {
       // Push: cloud-side file (if any) is displaced. Back it up first.

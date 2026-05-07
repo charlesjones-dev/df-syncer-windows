@@ -187,7 +187,8 @@ export function Step4SyncSelection(props: Step4SyncSelectionProps): JSX.Element 
         Choose what to sync
       </h2>
       <p className="wizard-step__copy">
-        df-syncer-windows mirrors only the subfolders you tick. You can change this later in Settings.
+        df-syncer-windows mirrors only the subfolders you tick. You can change this later in
+        Settings.
       </p>
 
       <ul className="step4__list" role="group" aria-labelledby="step4-heading">
