@@ -1,0 +1,77 @@
+{
+  "name": "df-syncer-windows",
+  "version": "1.0.0",
+  "description": "Sync Dwarf Fortress saves, mods, and prefs across PCs via a local cloud-drive folder.",
+  "main": "./out/main/index.js",
+  "author": "Charles Jones",
+  "license": "MIT",
+  "private": true,
+  "homepage": "https://github.com/charlesjones-dev/df-syncer-windows#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/charlesjones-dev/df-syncer-windows.git"
+  },
+  "bugs": {
+    "url": "https://github.com/charlesjones-dev/df-syncer-windows/issues"
+  },
+  "scripts": {
+    "dev": "electron-vite dev",
+    "build": "electron-vite build",
+    "package": "electron-vite build && electron-builder --win portable",
+    "package:installer": "electron-vite build && electron-builder --win nsis",
+    "package:msi": "electron-vite build && electron-builder --win msi",
+    "package:all": "electron-vite build && electron-builder --win portable nsis msi",
+    "setup:msi": "winget install --id WiXToolset.WiXToolset --source winget",
+    "typecheck": "tsc --noEmit -p tsconfig.node.json && tsc --noEmit -p tsconfig.web.json",
+    "lint": "eslint src/",
+    "lint:fix": "eslint src/ --fix",
+    "format": "prettier --write \"src/**/*.{ts,tsx,css,html}\"",
+    "format:check": "prettier --check \"src/**/*.{ts,tsx,css,html}\"",
+    "check": "pnpm run typecheck && pnpm run lint && pnpm run format:check",
+    "test": "vitest run --passWithNoTests",
+    "test:watch": "vitest --passWithNoTests",
+    "audit:deps": "pnpm audit --audit-level=critical",
+    "audit:sast": "docker run --rm -v .:/src semgrep/semgrep semgrep scan --config auto /src",
+    "audit:all": "pnpm run audit:deps & pnpm run audit:sast",
+    "clean": "rimraf node_modules out dist"
+  },
+  "dependencies": {
+    "electron-store": "8.2.0",
+    "picomatch": "4.0.4",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "tar": "7.5.13",
+    "zod": "4.4.3"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.2",
+    "@testing-library/dom": "^10.4.1",
+    "@testing-library/react": "^16.3.2",
+    "@testing-library/user-event": "^14.6.1",
+    "@types/node": "^22.10.0",
+    "@types/picomatch": "^4.0.3",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react": "^4.3.4",
+    "electron": "^33.2.0",
+    "electron-builder": "^25.1.8",
+    "electron-vite": "^3.0.0",
+    "eslint": "^9.39.2",
+    "eslint-config-prettier": "^10.1.8",
+    "jsdom": "^29.1.1",
+    "prettier": "^3.8.1",
+    "rimraf": "^6.1.2",
+    "typescript": "^5.7.2",
+    "typescript-eslint": "^8.55.0",
+    "vitest": "^2.1.8"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "electron",
+      "esbuild"
+    ],
+    "overrides": {
+      "tar": ">=7.5.7"
+    }
+  }
+}

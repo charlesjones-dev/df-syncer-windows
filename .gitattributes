@@ -1,0 +1,20 @@
+# Force LF line endings for all text files regardless of OS / Git config.
+# Prevents Prettier --check failures on CI when core.autocrlf=true converts
+# LF in the repo to CRLF on Windows checkout.
+* text=auto eol=lf
+
+# Binary files — explicit so they're never line-ending normalized.
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.icns binary
+*.exe binary
+*.dll binary
+*.zip binary
+*.gz binary
+*.tar binary
+*.7z binary
+*.msi binary
+*.pdf binary

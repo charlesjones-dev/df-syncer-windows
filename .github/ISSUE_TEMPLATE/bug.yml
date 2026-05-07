@@ -1,0 +1,90 @@
+name: Bug report
+description: Report a bug or unexpected behavior in df-syncer-windows.
+title: "[bug] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to file a bug. Please fill in the fields
+        below so we can reproduce the issue. For security vulnerabilities,
+        please contact the project maintainer at https://charlesjones.dev/contact instead — see SECURITY.md.
+
+  - type: input
+    id: version
+    attributes:
+      label: df-syncer-windows version
+      description: Settings → About, or the filename of the installer/portable exe.
+      placeholder: "1.0.0"
+    validations:
+      required: true
+
+  - type: input
+    id: windows
+    attributes:
+      label: Windows version
+      description: e.g. Windows 11 23H2 (build 22631), Windows 10 22H2.
+      placeholder: "Windows 11 23H2 (build 22631)"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: artifact
+    attributes:
+      label: How did you install df-syncer-windows?
+      options:
+        - Portable .exe
+        - NSIS installer (.exe)
+        - MSI installer
+        - Built from source
+    validations:
+      required: true
+
+  - type: input
+    id: cloud
+    attributes:
+      label: Cloud client (if relevant)
+      description: e.g. Proton Drive, OneDrive, Dropbox, Google Drive, iCloud, none.
+      placeholder: "Proton Drive"
+
+  - type: textarea
+    id: repro
+    attributes:
+      label: Steps to reproduce
+      description: Numbered, minimal steps that reliably trigger the bug.
+      placeholder: |
+        1. Open the app.
+        2. Click Pull.
+        3. ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+      description: Include any error messages or toasts you saw.
+    validations:
+      required: true
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs
+      description: |
+        Attach `%APPDATA%\df-syncer-windows\logs\df-syncer-windows-<today>.log` if relevant.
+        Settings → About → Open Logs Folder is the fastest way to find them.
+      render: text
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: Additional context
+      description: Screenshots, history entries, anything else useful.

@@ -1,0 +1,56 @@
+name: Feature request
+description: Suggest a new feature or behavioral change for df-syncer-windows.
+title: "[feature] "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for the suggestion. Please describe the use case first; the
+        implementation discussion comes after we agree on the problem.
+
+  - type: textarea
+    id: use-case
+    attributes:
+      label: Use case
+      description: |
+        What are you trying to do? Describe the workflow or scenario
+        in plain language, not the proposed feature.
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposed
+    attributes:
+      label: Proposed behavior
+      description: |
+        How should df-syncer-windows behave to support the use case? UI sketches or
+        ASCII mockups welcome.
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      description: Workarounds you've tried, or approaches you considered and rejected.
+
+  - type: dropdown
+    id: scope
+    attributes:
+      label: Does this fit v1's stated non-goals?
+      description: |
+        v1 is explicitly Windows-only, GUI-only, no cloud-API integration, no
+        auto-update, no code signing, no Steam launcher integration. Out-of-scope
+        suggestions are welcome but will be tracked for a future major version.
+      options:
+        - In scope for v1
+        - Out of scope (future)
+        - Not sure
+    validations:
+      required: true
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: Additional context
