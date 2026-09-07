@@ -2,13 +2,19 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
+**Retired — September 2026.** No further maintenance, features, bug fixes, or
+security updates are planned. The commands, setup guidance, development workflow,
+and references to in-progress phases below are historical documentation for
+independent forks, not an active roadmap. See [README.md](README.md) and
+[CONTRIBUTING.md](CONTRIBUTING.md). The existing MIT license remains in effect.
+
 ## Project
 
 Electron desktop app (Windows-only, x64) that syncs Dwarf Fortress saves/mods/prefs across PCs by reading and writing a folder the user's existing cloud client (Proton Drive, OneDrive, etc.) is already mirroring. The app never authenticates with any cloud provider — it only touches the local mirror folder. Sync is manual and explicit (Push / Pull / Full Sync) and every overwrite is preceded by a recoverable backup.
 
 Package manager is **pnpm** (enforced via `frozen-lockfile=true` in `.npmrc`). The `.npmrc` also pins `minimum-release-age=4320` (3 days) for supply-chain safety; new dependencies won't install until they've been published for that long.
 
-## Common commands
+## Historical setup and common commands
 
 ```
 pnpm install --frozen-lockfile  # bootstrap

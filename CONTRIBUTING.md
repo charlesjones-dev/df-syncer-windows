@@ -1,8 +1,21 @@
 # Contributing to df-syncer-windows
 
-Thanks for your interest in contributing! Here's how to get started.
+**Retired — September 2026.** This project no longer accepts contributions, bug
+reports, feature requests, or pull requests. There will be no further maintenance,
+features, bug fixes, or security updates. See [SUPPORT.md](SUPPORT.md).
 
-## Getting Started
+Independent forks are welcome under the existing [MIT License](LICENSE), with
+its copyright and license notices retained. Fork maintainers set their own
+contribution and support policies; there is no upstream review or support.
+
+## Historical development reference
+
+The setup instructions, scripts, branch conventions, and PR checklist below
+describe the former workflow for reference by independent forks. They are not
+an invitation to install the retired app or submit changes upstream. References
+to unfinished plans are historical and carry no commitment to future work.
+
+### Historical setup
 
 1. Fork the repository.
 2. Clone your fork: `git clone https://github.com/<your-username>/df-syncer-windows.git`.
@@ -11,27 +24,27 @@ Thanks for your interest in contributing! Here's how to get started.
 
 ## Scripts
 
-| Script                   | What it does                                                    |
-| ------------------------ | --------------------------------------------------------------- |
-| `pnpm run dev`           | Start electron-vite dev server with HMR.                        |
-| `pnpm run build`         | Build main / preload / renderer bundles into `out/`.            |
-| `pnpm run package`       | Build a portable `.exe` into `dist/`.                           |
-| `pnpm run package:installer` | Build an NSIS installer into `dist/`.                       |
-| `pnpm run package:msi`   | Build an MSI installer into `dist/` (requires WiX v3).          |
-| `pnpm run package:all`   | Build all three Windows artifacts into `dist/`.                 |
-| `pnpm run setup:msi`     | One-time install of WiX v3 via winget on a dev machine.         |
-| `pnpm run typecheck`     | `tsc --noEmit` against both tsconfigs.                          |
-| `pnpm run lint`          | `eslint src/`.                                                  |
-| `pnpm run lint:fix`      | `eslint src/ --fix`.                                            |
-| `pnpm run format`        | Prettier write across `src/`.                                   |
-| `pnpm run format:check`  | Prettier check across `src/`.                                   |
-| `pnpm run check`         | Typecheck + lint + format check (the CI gate).                  |
-| `pnpm run test`          | Run all Vitest suites.                                          |
-| `pnpm run test:watch`    | Watch mode.                                                     |
-| `pnpm run audit:deps`    | `pnpm audit` against the lockfile.                              |
-| `pnpm run audit:sast`    | Run Semgrep over `src/` (requires Docker locally — not in CI).  |
-| `pnpm run audit:all`     | `audit:deps` + `audit:sast` together.                           |
-| `pnpm run clean`         | Remove `node_modules`, `out`, `dist`.                           |
+| Script                       | What it does                                                   |
+| ---------------------------- | -------------------------------------------------------------- |
+| `pnpm run dev`               | Start electron-vite dev server with HMR.                       |
+| `pnpm run build`             | Build main / preload / renderer bundles into `out/`.           |
+| `pnpm run package`           | Build a portable `.exe` into `dist/`.                          |
+| `pnpm run package:installer` | Build an NSIS installer into `dist/`.                          |
+| `pnpm run package:msi`       | Build an MSI installer into `dist/` (requires WiX v3).         |
+| `pnpm run package:all`       | Build all three Windows artifacts into `dist/`.                |
+| `pnpm run setup:msi`         | One-time install of WiX v3 via winget on a dev machine.        |
+| `pnpm run typecheck`         | `tsc --noEmit` against both tsconfigs.                         |
+| `pnpm run lint`              | `eslint src/`.                                                 |
+| `pnpm run lint:fix`          | `eslint src/ --fix`.                                           |
+| `pnpm run format`            | Prettier write across `src/`.                                  |
+| `pnpm run format:check`      | Prettier check across `src/`.                                  |
+| `pnpm run check`             | Typecheck + lint + format check (the CI gate).                 |
+| `pnpm run test`              | Run all Vitest suites.                                         |
+| `pnpm run test:watch`        | Watch mode.                                                    |
+| `pnpm run audit:deps`        | `pnpm audit` against the lockfile.                             |
+| `pnpm run audit:sast`        | Run Semgrep over `src/` (requires Docker locally — not in CI). |
+| `pnpm run audit:all`         | `audit:deps` + `audit:sast` together.                          |
+| `pnpm run clean`             | Remove `node_modules`, `out`, `dist`.                          |
 
 `audit:sast` is a local-only check; CI runs only `audit:deps` to avoid the
 Docker-on-Actions complexity for v1.
@@ -43,9 +56,9 @@ Docker-on-Actions complexity for v1.
 - `chore/<short-name>` — refactors, deps, infra.
 - `docs/<short-name>` — documentation-only changes.
 
-## Pull Request Checklist
+## Historical Pull Request Checklist
 
-Before requesting review:
+The former review checklist was:
 
 - [ ] `pnpm run check` is clean (typecheck + lint + format).
 - [ ] `pnpm run test` is green.
@@ -68,16 +81,10 @@ Before requesting review:
 
 ## Reporting Bugs
 
-Open an issue with:
-
-- Steps to reproduce.
-- Expected vs actual behavior.
-- Windows version and df-syncer-windows version (Settings → About).
-
-For security issues, see [SECURITY.md](SECURITY.md) — please do not open a
-public issue.
+Bug reports and feature requests are no longer triaged or fixed. Security
+support has also ended; see [SECURITY.md](SECURITY.md). If using an independent
+fork, follow that fork's policies.
 
 ## License
 
-By contributing, you agree that your contributions will be licensed under the
-[MIT License](LICENSE).
+The existing code remains available under the [MIT License](LICENSE).

@@ -1,5 +1,10 @@
 # Contributor Covenant Code of Conduct
 
+**Retired — September 2026.** This document records the former community
+standards. The project no longer operates an active contribution or support
+community, and the former maintainer reporting and response process has ended.
+Independent forks establish their own community policies.
+
 ## Our Pledge
 
 We as members, contributors, and leaders pledge to make participation in our
@@ -29,11 +34,9 @@ Examples of unacceptable behavior:
 
 ## Enforcement
 
-Instances of abusive, harassing, or otherwise unacceptable behavior may be
-reported to the project maintainer at [**charlesjones.dev/contact**](https://charlesjones.dev/contact).
-
-All complaints will be reviewed and investigated and will result in a response
-that is deemed necessary and appropriate to the circumstances.
+The former maintainer enforcement process is retired; no review, investigation,
+or response is promised. GitHub's own platform reporting mechanisms remain
+separate from this project's former community process.
 
 ## Attribution
 

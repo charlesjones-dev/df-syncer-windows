@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Project retired — September 2026
+    url: https://github.com/charlesjones-dev/df-syncer-windows/blob/main/SUPPORT.md
+    about: This project is unmaintained. Bug reports, feature requests, and support requests are no longer accepted.
