@@ -1,49 +1,39 @@
 # Security Policy
 
-## Reporting a Vulnerability
+## End of security support — September 2026
 
-If you discover a security vulnerability in df-syncer-windows, please report it
-responsibly.
+This project is retired and unmaintained. **No versions are supported**, including
+v1.0.0. There will be no security updates, dependency updates, vulnerability
+triage, or coordinated disclosure from this project.
 
-**Do not open a public issue for security vulnerabilities.**
+The former private reporting channel and response windows are retired. Do not
+submit vulnerability reports here expecting a response or fix. For an independent
+fork, follow its security policy; for an upstream dependency, use that upstream
+project's reporting process. See [SUPPORT.md](SUPPORT.md).
 
-Email reports to [**charlesjones.dev/contact**](https://charlesjones.dev/contact) with:
+## Historical security scope
 
-- A description of the vulnerability.
-- Steps to reproduce.
-- Potential impact.
-- A suggested fix (if any).
-
-## Response Window
-
-- **Triage**: an initial response within **7 days** acknowledging the report
-  and indicating whether it appears in scope.
-- **Fix or disclosure**: for high-severity issues, a fix or coordinated
-  disclosure within **30 days** of triage. Lower-severity issues will be
-  scheduled into a normal release cadence.
-
-## Scope
-
-In scope:
+The former policy covered:
 
 - The application source code in this repository.
 - The IPC surface between the renderer and main process.
 - Filesystem operations (atomic writes, backup snapshots, manifest writes).
 - Cloud-folder writes and the advisory `df-syncer-windows/lock.json` protocol.
 
-Out of scope:
+The former policy excluded:
 
-- Vulnerabilities in upstream Electron, Node.js, or Windows that we cannot
-  mitigate from inside the application. We will track upstream advisories and
-  bump dependencies on a normal cadence; please report those upstream.
+- Vulnerabilities in upstream Electron, Node.js, or Windows that could not be
+  mitigated from inside the application. Upstream advisories are no longer
+  monitored and dependencies will not be updated here.
 - Issues that require already-compromised local privileges (an attacker who
   can write inside `%APPDATA%\df-syncer-windows` can already do anything df-syncer-windows can).
 - Issues caused by user-supplied glob excludes that bypass intended sync
   scope — these are configuration choices, not security defects.
 
-## Security Posture
+## Historical security posture
 
-df-syncer-windows ships with the following measures:
+The retired code includes the following measures. This is technical reference,
+not an assurance of ongoing security or support:
 
 - `contextIsolation: true`, `nodeIntegration: false`, `sandbox: true` on the
   renderer.

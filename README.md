@@ -1,9 +1,21 @@
 # df-syncer-windows
 
+> [!WARNING]
+> **Retired — September 2026.** This project is unmaintained and will receive no
+> further maintenance, features, bug fixes, or security updates. Support and
+> contributions are no longer accepted. The source and documentation remain
+> available for historical reference. Independent forks are welcome under the
+> existing [MIT License](LICENSE), including its copyright and license notice
+> requirements.
+
 Sync Dwarf Fortress saves, mods, and prefs across PCs via a local cloud-drive folder.
 
-[![CI](https://github.com/charlesjones-dev/df-syncer-windows/actions/workflows/ci.yml/badge.svg)](https://github.com/charlesjones-dev/df-syncer-windows/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
+See [retirement status](RETIREMENT.md) for distribution and service checks, and
+[support policy](SUPPORT.md) for the end of support. The feature descriptions,
+setup instructions, and troubleshooting below document the retired application;
+they are not a recommendation to install it or a promise of future work.
 
 ## What it does
 
@@ -31,13 +43,16 @@ game so it can prompt you to push when you're done playing.
   no telemetry, no network calls except `shell.openExternal` for help links.
 - Distributable as portable `.exe`, NSIS installer, and `.msi`.
 
-## Screenshots
+## Historical unfinished work
 
-Screenshots — coming soon.
+Screenshots were planned but were not added before retirement. Any unfinished
+plans or references to future work are historical only and will not be completed
+in this repository.
 
-## Install
+## Historical distribution
 
-Three artifacts are published on the [GitHub Releases](https://github.com/charlesjones-dev/df-syncer-windows/releases) page for each tagged version:
+The existing [v1.0.0 release](https://github.com/charlesjones-dev/df-syncer-windows/releases/tag/v1.0.0)
+is preserved as a historical record. Its three Windows application artifacts are:
 
 - **Portable** — `df-syncer-windows-<version>.exe`. Single file, no installation, runs anywhere.
 - **Installer** — `df-syncer-windows-<version>-setup.exe`. NSIS installer with Start Menu entry.
@@ -47,17 +62,19 @@ Windows 10 (x64) or later. The MSI artifact is for end users and does not
 require any extra tooling to install — WiX v3 is only needed by the build
 machine.
 
-## Quickstart
+## Historical setup instructions
 
-1. Install (`df-syncer-windows-X.Y.Z-setup.exe` or run the portable `.exe`).
-2. On first launch, the wizard opens.
-3. Pick the local folder your cloud drive mirrors (e.g. `C:\Users\<you>\Proton Drive`).
-4. Confirm the auto-detected DF folder (`%APPDATA%\Bay 12 Games\Dwarf Fortress`) or pick yours.
-5. Tick which subfolders to sync (default: `save` / `mods` / `prefs`).
-6. Name this PC (used in manifest, lock, and backup paths).
-7. Review and run a dry-run preview.
-8. Finish. Click **Push** to seed the cloud. On your other PC, install df-syncer-windows,
-   point at the same cloud folder, click **Pull**.
+The former setup flow is retained for reference by existing users and independent forks:
+
+1. The app was distributed as `df-syncer-windows-X.Y.Z-setup.exe` or a portable `.exe`.
+2. On first launch, the wizard opened.
+3. The user selected the local cloud-drive folder (e.g. `C:\Users\<you>\Proton Drive`).
+4. The wizard auto-detected the DF folder (`%APPDATA%\Bay 12 Games\Dwarf Fortress`)
+   or accepted a manually selected folder.
+5. The user selected subfolders to sync (default: `save` / `mods` / `prefs`).
+6. A PC name identified the machine in manifest, lock, and backup paths.
+7. A dry-run preview preceded completion of the wizard.
+8. **Push** seeded the cloud folder; **Pull** on another configured PC retrieved it.
 
 ## How sync works
 
@@ -70,7 +87,7 @@ and copies the loser into a local backup snapshot first; ties within 2 seconds
 always prompt. Cloud writes are atomic (`<file>.df-syncer-windows.tmp` then rename), and
 an advisory `df-syncer-windows/lock.json` keeps two PCs from syncing simultaneously.
 
-## Troubleshooting
+## Historical troubleshooting
 
 ### Cloud client rewrites mtimes
 
@@ -93,14 +110,15 @@ preserved and surfaced in the UI so you can decide.
 
 ### MSI install fails to build
 
-The `.msi` build target requires WiX v3 on the build machine. Run
-`pnpm run setup:msi` once on a new dev box to install it via winget. End users
-installing the published `.msi` artifact do not need WiX.
+The `.msi` build target requires WiX v3 on the build machine. The former build
+setup used `pnpm run setup:msi` to install it via winget. The published `.msi`
+artifact did not require WiX on end-user machines.
 
-## Development
+## Historical development documentation
 
-See [CONTRIBUTING.md](CONTRIBUTING.md) for setup, scripts, branch convention,
-and the PR checklist.
+See [CONTRIBUTING.md](CONTRIBUTING.md) for historical setup, scripts, branch
+conventions, and the former PR checklist. Upstream contributions are closed;
+independent forks may use these notes under the [MIT License](LICENSE).
 
 ## License
 
